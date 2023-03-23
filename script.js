@@ -1,5 +1,6 @@
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
+    const startButton = document.getElementById("startButton");
 
     // Constants
     const CANVAS_HEIGHT = canvas.height;
@@ -71,7 +72,23 @@
 
     function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
-      }
+    }
+
+    function gameMenu(){
+        const menu = document.querySelector(".start").style.display = "none";
+        this.paused = false;
+    }
+
+    function pauseGame(){
+        
+        if(this.paused === false){
+            console.log("Pause = false");
+            pauseMenu.style.display = "none";
+        }else{
+            console.log("Pause = true");
+            pauseMenu.style.display = "block";
+        }
+    }
 
     class Ball {
         constructor() {
@@ -235,9 +252,14 @@
         }
 
         updateAndDrawState() {
+            const pauseMenu = document.querySelector(".pauseField");
             if (this.paused) {
+                pauseMenu.style.display = "block";
                 return;
+            }else{
+                pauseMenu.style.display = "none";
             }
+
             this.nextState();
             this.drawState();
         }
@@ -269,10 +291,14 @@
         }
 
         start() {
-        setInterval(this.updateAndDrawState.bind(this), STATE_CHANGE_INTERVAL);
-        this.setupControl();
+            setInterval(this.updateAndDrawState.bind(this), STATE_CHANGE_INTERVAL);
+            this.setupControl();
         }
     }
 
     const game = new Game();
-    game.start();
+    startButton.addEventListener('click', ()=>{
+        document.querySelector(".start").style.display = "none";
+        game.start();
+    });
+    

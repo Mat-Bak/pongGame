@@ -1,0 +1,36 @@
+body{
+    display: flex;
+}
+
+.player, .pause{
+    margin: 2rem;
+}
+
+.start{
+    position: absolute;
+    top: 160px;
+    left: 240px;
+    text-align: center;
+    border: solid blue 1px;
+    padding: 30px;
+    background-color: grey;
+}
+
+.start>* {
+    margin: 20px;
+}
+
+.pauseField{
+    position: absolute;
+    display: none;
+    top: 180px;
+    left: 290px;
+    border: solid rgb(74, 74, 74) 2px;
+    text-align: center;
+    padding: 30px 50px;
+    background-color: rgb(170, 170, 170);
+}
+
+.pauseField>p{
+    font-weight: bold;
+}

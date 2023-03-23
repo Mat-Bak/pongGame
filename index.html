@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <canvas id="gameCanvas" width="800" height="500" style="border:1px solid">
 
     </canvas>
+
+    <div id="help">
+        <div class="player">
+            <b>Player 1</b>
+            <p>&#8593; move up</p>
+            <p>&#8595; move Down</p>
+        </div>
+        
+
+        <div class="player">
+            <b>Player 2</b>
+            <p><b>W</b> move up</p>
+            <p><b>S</b> move up</p>
+        </div>
+
+        <p class="pause"><b>P</b> Pause</p>
+        
+    </div>
+    
+    <div class="start">
+        <p>WELCOME TO THE PONG GAME</p>
+        <button id="startButton" >START</button>
+    </div>
+
+    <div class="pauseField">
+        <p>GAME PAUSED!</p>
+        <i>(P to resume)</i>
+    </div>
 
 <script src="script.js"></script>
 
